@@ -3,44 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NPCInteraction : MonoBehaviour
+public class NPCInteraction : Interactables
 {
     public Sprite dialogueBoxSprite;
     public GameObject dialogueBox;
-    public AudioSource audioSource;
+    //public AudioSource audioSource;
 
-    public AudioClip dialogueSound;
+    //public AudioClip dialogueSound;
 
     public Dialog dialogue;
     public bool isDialogueTrigger = false;
-    public bool isInDistance = false;
 
 
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        isInDistance = true;
-    }
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isInDistance = false;
+        isPlayerInRange = false;
         
         FindObjectOfType<DialogueManager>().animator.SetBool("IsOpen", false);
-        audioSource.Stop();
+        //audioSource.Stop();
         isDialogueTrigger = false;
     }
 
     private void Update()
     {
-        if (isInDistance)
+        if (isPlayerInRange)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                
                 if (isDialogueTrigger)

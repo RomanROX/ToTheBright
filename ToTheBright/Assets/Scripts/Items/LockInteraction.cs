@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockInteraction : MonoBehaviour
+public class LockInteraction : Interactables
 {
     public string keyName;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private void Update()
     {
-        if (gameObject.CompareTag("Lock") && collision.CompareTag("Player"))
+        if (isPlayerInRange)
         {
-            if (GameManager.instance.Inventory.Contains(keyName))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                Destroy(gameObject);
+                if (GameManager.instance.Inventory.Contains(keyName))
+                {
+                    Destroy(gameObject);
+                }
             }
-
         }
     }
 }
