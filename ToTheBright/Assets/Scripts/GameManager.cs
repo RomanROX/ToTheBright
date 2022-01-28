@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private GameObject go;
 
     public int coins = 0;
+    public List<string> Inventory = new List<string>();
+
     private void Awake()
     {
         if (instance is null)
