@@ -37,8 +37,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             anim.SetInteger("AnimState", 1);
-        }
-
+        }        
         else if (Input.GetKey(KeyCode.A))
         {
             anim.SetInteger("AnimState", 2);
