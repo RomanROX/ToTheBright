@@ -1,2 +1,3 @@
 # ToTheBright
-GameJam
+Double-Trio Entertainment
+GameJam 2022
