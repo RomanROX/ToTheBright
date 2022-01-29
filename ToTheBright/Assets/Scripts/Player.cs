@@ -57,14 +57,14 @@ public class Player : MonoBehaviour
             anim.SetBool("isJumping", true);
         }
 
-        if (rb.velocity.y >= 0)
-        {
-            rb.gravityScale = gravityScale;
-        }
-        else if (rb.velocity.y < 0)
-        {
-            rb.gravityScale = fallingGravityScale;
-        }
+        //if (rb.velocity.y >= 0)
+        //{
+        //    rb.gravityScale = gravityScale;
+        //}
+        //else if (rb.velocity.y < 0)
+        //{
+        //    rb.gravityScale = fallingGravityScale;
+        //}
 
         if (rb.velocity.y==0)
         {
