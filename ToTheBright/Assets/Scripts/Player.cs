@@ -43,8 +43,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && jumpdet==true)
         {
-            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
-            anim.SetBool("isJumping", true);
+            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);            
             jumpdet = false;
         }              
 
