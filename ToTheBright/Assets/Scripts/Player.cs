@@ -46,50 +46,7 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
             jumpdet = false;
-        }
-
-        //if (rb.velocity.y >= 0)
-        //{
-        //    rb.gravityScale = gravityScale;
-        //}
-        //else if (rb.velocity.y < 0)
-        //{
-        //    rb.gravityScale = fallingGravityScale;
-        //}
-
-        if (rb.velocity.y==0)
-        {
-            anim.SetBool("isJumping", false);
-        }
-
-        if (rb.velocity.x > 0)
-        {
-            anim.SetBool("isRight", true);
-        }
-        else if (rb.velocity.x < 0)
-        {
-            anim.SetBool("isRight", false);
-        }
-
-
-        if (Input.anyKey)
-        {
-            anim.SetBool("isIdle", false);
-        }
-        else { anim.SetBool("isIdle", true); anim.SetBool("isJumping", false); }
-
-        anim.SetFloat("moveY", jump);
-
-        //if (horizontal > 0)
-        //{
-        //    anim.SetBool("isRight", true);
-        //}
-        //else if (horizontal < 0) { anim.SetBool("isRight", false); }
-
-        //if (jump!=0)
-        //{
-        //    anim.SetBool("isJumping", true);
-        //}else { anim.SetBool("isJumping", false); }
+        }              
 
 
     }
@@ -98,15 +55,15 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        anim.SetBool("Grounded", jumpdet);
-        //anim.SetFloat("vSpeed", rb.velocity.y);
+        anim.SetBool("Grounded", jumpdet);        
     }
 
+    //Move X
     public void Move()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
-
+    //Jump Detect
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -116,6 +73,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //BlendTree
     public void BlendTree()
     {
         if (Input.GetKey(KeyCode.D))
