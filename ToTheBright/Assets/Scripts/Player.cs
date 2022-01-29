@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
     {
         Move();
         anim.SetBool("Grounded", jumpdet);
-        anim.SetFloat("vSpeed", rb.velocity.y);
+        //anim.SetFloat("vSpeed", rb.velocity.y);
     }
 
     public void Move()
@@ -112,6 +112,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             jumpdet = true;
+
         }
     }
 
@@ -121,6 +122,7 @@ public class Player : MonoBehaviour
         {
             anim.SetInteger("Move", 1);
             anim.SetFloat("WalkBT", 0);
+            anim.SetFloat("JumpBT", 0);
             IsRight = true;
         }
 
@@ -128,6 +130,7 @@ public class Player : MonoBehaviour
         {
             anim.SetInteger("Move", 1);
             anim.SetFloat("WalkBT", 2);
+            anim.SetFloat("JumpBT", 2);
             IsRight = false;
         }
 
