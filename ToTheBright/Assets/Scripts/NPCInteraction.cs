@@ -15,11 +15,13 @@ public class NPCInteraction : MonoBehaviour
     public bool isDialogueTrigger = false;
     public bool isInDistance = false;
 
+    
 
 
     private void Start()
     {
         //audioSource = GetComponent<AudioSource>();
+        
     }
 
     
@@ -42,7 +44,8 @@ public class NPCInteraction : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-               
+                
+
                 if (isDialogueTrigger)
                 {
                     FindObjectOfType<DialogueManager>().DisplayNextSentence();
