@@ -903,6 +903,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jump: 0
+  horizontal: 0
+  jumpAmount: 35
+  gravityScale: 10
+  fallingGravityScale: 40
   rb: {fileID: 1658894842}
   anim: {fileID: 1658894838}
 --- !u!50 &1658894842

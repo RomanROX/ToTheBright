@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public float jump;
     public float horizontal;
 
+    
+
 
     public float jumpAmount = 35;
     public float gravityScale = 10;
@@ -34,20 +36,20 @@ public class Player : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         jump = Input.GetAxisRaw("Jump");
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            anim.SetInteger("AnimState", 1);
-        }
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    anim.SetInteger("AnimState", 1);
+        //}
 
-        else if (Input.GetKey(KeyCode.A))
-        {
-            anim.SetInteger("AnimState", 2);
-        }
+        //else if (Input.GetKey(KeyCode.A))
+        //{
+        //    anim.SetInteger("AnimState", 2);
+        //}
 
-        else
-        {
-            anim.SetInteger("AnimState", 0);
-        }
+        //else
+        //{
+        //    anim.SetInteger("AnimState", 0);
+        //}
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -63,6 +65,42 @@ public class Player : MonoBehaviour
         {
             rb.gravityScale = fallingGravityScale;
         }
+
+        if (rb.velocity.y==0)
+        {
+            anim.SetBool("isJumping", false);
+        }
+
+        if (rb.velocity.x > 0)
+        {
+            anim.SetBool("isRight", true);
+        }
+        else if (rb.velocity.x < 0)
+        {
+            anim.SetBool("isRight", false);
+        }
+
+
+        if (Input.anyKey)
+        {
+            anim.SetBool("isIdle", false);
+        }
+        else { anim.SetBool("isIdle", true); anim.SetBool("isJumping", false); }
+
+        anim.SetFloat("moveY", jump);
+
+        //if (horizontal > 0)
+        //{
+        //    anim.SetBool("isRight", true);
+        //}
+        //else if (horizontal < 0) { anim.SetBool("isRight", false); }
+
+        //if (jump!=0)
+        //{
+        //    anim.SetBool("isJumping", true);
+        //}else { anim.SetBool("isJumping", false); }
+
+
     }
 
     
