@@ -2,42 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FragmentInteraction : MonoBehaviour
+public class FragmentInteraction : Interactables
 {
     public string name;
     public List<string> neededFragments = new List<string>();
     public LockInteraction completeItem;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private void Update()
     {
-        if (gameObject.CompareTag("Fragment") && collision.CompareTag("Player"))
+        if (isPlayerInRange)
         {
-            GameManager.instance.Inventory.Add(name);
-            
-            if (CheckList())
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("allFragments");
-                //GameManager.instance.Invetory.Remove()
-                int i = 0;
-                foreach (string item in neededFragments)
-                {  
-                    if (GameManager.instance.Inventory.Contains(neededFragments[i]))
+                GameManager.instance.Inventory.Add(name);
+
+                if (CheckList())
+                {
+                    Debug.Log("allFragments");
+                    int i = 0;
+                    foreach (string item in neededFragments)
                     {
-                        //for
-                        Debug.Log("ver1 " + GameManager.instance.Inventory.ToString());
-                        GameManager.instance.Inventory.Remove(neededFragments[i]);
-                        Debug.Log("ver2 "+GameManager.instance.Inventory.ToString());
+                        if (GameManager.instance.Inventory.Contains(neededFragments[i]))
+                        {
+                            //for
+                            Debug.Log("ver1 " + GameManager.instance.Inventory.ToString());
+                            GameManager.instance.Inventory.Remove(neededFragments[i]);
+                            Debug.Log("ver2 " + GameManager.instance.Inventory.ToString());
+                        }
+                        i++;
                     }
-                    i++;
+                    GameManager.instance.Inventory.Add(completeItem.keyName);
+                    Debug.Log("verFinish " + GameManager.instance.Inventory.ToString());
                 }
-                GameManager.instance.Inventory.Add(completeItem.keyName);
-                Debug.Log("verFinish " + GameManager.instance.Inventory.ToString());
+                else { Debug.Log("missing"); }
+
+                Destroy(gameObject);
             }
-            else { Debug.Log("missing"); }
-            
-            Destroy(gameObject);
         }
     }
+
 
     public bool CheckList()
     {
