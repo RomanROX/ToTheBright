@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     //public int coins = 0;
     public List<string> Inventory = new List<string>();
 
+    //public string LastLevel
+
     private void Awake()
     {
         if (instance is null)
