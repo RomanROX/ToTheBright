@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     public Queue<string> text;
-    public Text nameText;
+    //public Text nameText;
     public Text dialogueText;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", true);
 
-        nameText.text = dialogue.name;
+        //nameText.text = dialogue.name;
 
         text.Clear();
 
@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(.1f);
+            yield return null;
         }
 
         //FindObjectOfType<NPCInteraction>().audioSource.Stop();
