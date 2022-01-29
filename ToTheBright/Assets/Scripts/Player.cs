@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
     public float speed;
     public float jump;
     public float horizontal;
-    
-    
+
+    public bool jumpdet = true;
 
 
     public float jumpAmount = 35;
@@ -51,10 +51,11 @@ public class Player : MonoBehaviour
         //    anim.SetInteger("AnimState", 0);
         //}
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && jumpdet==true)
         {
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
+            jumpdet = false;
         }
 
         //if (rb.velocity.y >= 0)
@@ -114,7 +115,15 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
-    
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            jumpdet = true;
+        }
+    }
+
+
+
 
 }
