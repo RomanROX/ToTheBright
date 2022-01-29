@@ -4,23 +4,22 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class HoverButton2 : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public string animationName;
     public RectTransform Button;
 
     void Start()
     {
-        Button.GetComponent<Animator>().Play("HoverOff");
+        Button.GetComponent<Animator>().Play("HoverOff2");
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Button.GetComponent<Animator>().Play("HoverOn");
+        Button.GetComponent<Animator>().Play("HoverOn2");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Button.GetComponent<Animator>().Play("HoverOff");
+        Button.GetComponent<Animator>().Play("HoverOff2");
     }
 }
