@@ -19,24 +19,19 @@ public class NewFragmentInteraction : Interactables
 
                 if (CheckList())
                 {
-                    Debug.Log("allFragments");
                     int i = 0;
                     foreach (string item in neededFragments)
                     {
                         if (GameManager.instance.Inventory.Contains(neededFragments[i]))
                         {
-                            //for
-                            Debug.Log("ver1 " + GameManager.instance.Inventory.ToString());
                             GameManager.instance.Inventory.Remove(neededFragments[i]);
-                            Debug.Log("ver2 " + GameManager.instance.Inventory.ToString());
                         }
                         i++;
                     }
                     GameManager.instance.Inventory.Add(lock_.GetComponent<NewLockInteraction>().keyName);
                     lock_.SetActive(true);
-                    Debug.Log("verFinish " + GameManager.instance.Inventory[0]);
                 }
-                else { Debug.Log("missing"); }
+                
 
                 Destroy(gameObject);
             }
