@@ -203,7 +203,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &548169443
 GameObject:
@@ -382,10 +382,10 @@ PolygonCollider2D:
       - {x: -37.81837, y: -3.3300476}
       - {x: -38.21979, y: -3.756979}
       - {x: -38.26693, y: -4.0891895}
-      - {x: -40.58963, y: -4.6232133}
-      - {x: -41.150192, y: -5.091575}
-      - {x: -41.288464, y: -5.7794333}
-      - {x: -41.904762, y: -5.824176}
+      - {x: -40.489273, y: -4.6870775}
+      - {x: -41.01334, y: -5.1736856}
+      - {x: -41.40707, y: -5.6790757}
+      - {x: -41.895638, y: -5.8697925}
       - {x: -42.290524, y: -6.082101}
       - {x: -42.658165, y: -6.21102}
       - {x: -42.876347, y: -6.667923}
@@ -569,7 +569,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2513365118957183041, guid: 6026d7ec4321c76448517ec2cd6179c5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2513365118957183041, guid: 6026d7ec4321c76448517ec2cd6179c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -625,89 +625,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6026d7ec4321c76448517ec2cd6179c5, type: 3}
---- !u!1 &938039151
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 938039154}
-  - component: {fileID: 938039153}
-  - component: {fileID: 938039152}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!81 &938039152
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938039151}
-  m_Enabled: 1
---- !u!20 &938039153
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938039151}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &938039154
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938039151}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -64.4, y: -3.3, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1671466845
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!60 &1671466846
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -871,10 +788,10 @@ PolygonCollider2D:
       - {x: -37.81837, y: -3.3300476}
       - {x: -38.21979, y: -3.756979}
       - {x: -38.26693, y: -4.0891895}
-      - {x: -40.58963, y: -4.6232133}
-      - {x: -41.150192, y: -5.091575}
-      - {x: -41.288464, y: -5.7794333}
-      - {x: -41.904762, y: -5.824176}
+      - {x: -40.476917, y: -4.67067}
+      - {x: -41.01975, y: -5.178538}
+      - {x: -41.38785, y: -5.6676245}
+      - {x: -41.898552, y: -5.8614454}
       - {x: -42.290524, y: -6.082101}
       - {x: -42.658165, y: -6.21102}
       - {x: -42.876347, y: -6.667923}
