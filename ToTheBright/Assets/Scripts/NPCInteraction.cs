@@ -15,11 +15,13 @@ public class NPCInteraction : MonoBehaviour
     public bool isDialogueTrigger = false;
     public bool isInDistance = false;
 
-
+    public GameObject FragmentHolder;
 
     private void Start()
     {
         //audioSource = GetComponent<AudioSource>();
+        FragmentHolder = GameObject.Find("FragmentHolder");
+        FragmentHolder.SetActive(false);
     }
 
     
@@ -31,16 +33,17 @@ public class NPCInteraction : MonoBehaviour
     {
         isInDistance = false;
         
-        FindObjectOfType<DialogueManager>().animator.SetBool("IsOpen", false);
+       FindObjectOfType<DialogueManager>().animator.SetInteger("BoxState", 3);
         //audioSource.Stop();
         isDialogueTrigger = false;
+        
     }
 
     private void Update()
     {
         if (isInDistance)
         {
-            if (Input.GetKeyDown(GameManager.instance.keybinds.dictionary["Dialogue"]))
+            if (Input.GetKeyDown(/*GameManager.instance.keybinds.dictionary["Dialogue"]*/ KeyCode.E))
             {
                
                 if (isDialogueTrigger)

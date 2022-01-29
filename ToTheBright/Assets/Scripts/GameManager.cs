@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     //public GameObject PauseUI;
     //public bool isPaused = false;
     public static GameManager instance;
-    public KeybindsManager keybinds;
+    //public KeybindsManager keybinds;
+    public DialogueManager dialogueManager;
 
     private GameObject go;
 
@@ -29,10 +30,10 @@ public class GameManager : MonoBehaviour
         }
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        keybinds = GetComponentInChildren<KeybindsManager>();
-    }
+    //void Start()
+    //{
+    //    keybinds = GetComponentInChildren<KeybindsManager>();
+    //}
 
     // Update is called once per frame
     void Update()

@@ -18,7 +18,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialog dialogue)
     {
-        animator.SetBool("IsOpen", true);
+        animator.SetInteger("BoxState", 1);
+       // animator.SetInteger("BoxState", 2);
 
         //nameText.text = dialogue.name;
 
@@ -37,8 +38,10 @@ public class DialogueManager : MonoBehaviour
         if (text.Count == 0)
         {
             FindObjectOfType<NPCInteraction>().isDialogueTrigger = false;
+            FindObjectOfType<NPCInteraction>().FragmentHolder.SetActive(true);
+            animator.SetInteger("BoxState", 3);
 
-            animator.SetBool("IsOpen", false);
+
 
             return;
         }
@@ -58,15 +61,11 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(0.01f);
         }
 
         //FindObjectOfType<NPCInteraction>().audioSource.Stop();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

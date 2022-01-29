@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/da.unity
     guid: 9dc2f0fd832ba474696733c61b652bcb
   - enabled: 1
@@ -21,11 +18,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Jump.unity
     guid: e6d6cb4ccf2c5f44bb67c4ae4e21e63f
   - enabled: 1
-    path: Assets/Scenes/Level01 1.unity
-    guid: aaccfaa7397bf054d8fce687745e1e1e
-  - enabled: 1
     path: Assets/Scenes/Level01.unity
     guid: a0235e0c258d21943a404f1cbef9f73d
+  - enabled: 1
+    path: Assets/Scenes/Level03.unity
+    guid: 2848cda0b05fe644bac71cbea6c8af4a
+  - enabled: 1
+    path: Assets/Scenes/Level04.unity
+    guid: db44d5f2ff1e68748a9dc04932dae227
+  - enabled: 1
+    path: Assets/Scenes/MainMenuSunVersion.unity
+    guid: 2e0c899a01271a046b7bf358ee7ba359
+  - enabled: 1
+    path: Assets/Scenes/nesto.unity
+    guid: a24241337990dd140abbfa61695899a7
   - enabled: 1
     path: Assets/Scenes/Level02.unity
     guid: c728f5ee067205f47a72cd5d1c848b61
