@@ -18,10 +18,7 @@ public class Player : MonoBehaviour
 
 
     public Rigidbody2D rb;
-    public Animator anim;
-
-
-    
+    public Animator anim; 
 
 
 
@@ -45,11 +42,9 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);            
             jumpdet = false;
-        }              
-
-
+        }         
+            
     }
-
     
     private void FixedUpdate()
     {
