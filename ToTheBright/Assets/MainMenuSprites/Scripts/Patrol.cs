@@ -7,12 +7,15 @@ public class Patrol : MonoBehaviour
     public float speed;
 
     public Transform[] waypoints;
+    public string chooseStart;
     private int waypointIndex= 0;
     public Rigidbody2D rb;
 
     void Start()
     {
-        this.transform.position = GameObject.Find("Text (2)").transform.position;
+        //this.transform.position = GameObject.Find(chooseStart).transform.position;
+        waypointIndex = Random.Range(0, 10);
+        transform.position = waypoints[waypointIndex].transform.position;
     }
 
     void FixedUpdate()
