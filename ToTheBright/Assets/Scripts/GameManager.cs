@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject GameUI;
-    public GameObject PauseUI;
-    public bool isPaused = false;
+    //public GameObject GameUI;
+    //public GameObject PauseUI;
+    //public bool isPaused = false;
     public static GameManager instance;
 
     private GameObject go;
 
-    public int coins = 0;
+    //public int coins = 0;
     public List<string> Inventory = new List<string>();
 
     private void Awake()
