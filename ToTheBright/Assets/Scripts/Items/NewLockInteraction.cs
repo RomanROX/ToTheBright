@@ -28,6 +28,7 @@ public class NewLockInteraction : Interactables
         if (collision.CompareTag("Player"))
         {
             SceneManager.LoadScene(nextScene);
+            GameManager.instance.LastLevelPlayed = SceneManager.GetActiveScene().ToString();
         }
     }
 }

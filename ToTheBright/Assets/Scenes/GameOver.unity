@@ -272,14 +272,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You remember something!
+  m_Text: 'Remember something!
 
 
-    it made happiness seem so far away
+    it may seem happiness is so far away, but it
+    isn''t
 
 
-    You
-    fell deeper'
+'
 --- !u!222 &229765995
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -370,7 +370,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 236994058}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 619193634}
+        m_TargetAssemblyTypeName: UIButtonBehaviour, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &236994058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +434,7 @@ GameObject:
   - component: {fileID: 619193630}
   - component: {fileID: 619193629}
   - component: {fileID: 619193633}
+  - component: {fileID: 619193634}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -538,6 +551,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &619193634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619193628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd1aec1cc40f2a4b9aae51caf7b1e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &632557993
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +728,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 823022108}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 619193634}
+        m_TargetAssemblyTypeName: UIButtonBehaviour, Assembly-CSharp
+        m_MethodName: RetryLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &823022108
 MonoBehaviour:
   m_ObjectHideFlags: 0

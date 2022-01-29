@@ -12,6 +12,6 @@ public class UIButtonBehaviour : MonoBehaviour
     }
     public void RetryLevel()
     {
-
+        SceneManager.LoadScene(GameManager.instance.LastLevelPlayed);
     }
 }
