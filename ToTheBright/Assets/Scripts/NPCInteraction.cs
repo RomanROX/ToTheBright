@@ -40,7 +40,7 @@ public class NPCInteraction : MonoBehaviour
     {
         if (isInDistance)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(GameManager.instance.keybinds.dictionary["Dialogue"]))
             {
                
                 if (isDialogueTrigger)

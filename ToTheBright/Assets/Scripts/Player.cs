@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 
         
 
-        if (Input.GetKeyDown(KeyCode.Space) && jumpdet==true)
+        if (Input.GetKeyDown(GameManager.instance.keybinds.dictionary["Jump"]) && jumpdet==true)
         {
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);            
             jumpdet = false;
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
     //BlendTree
     public void BlendTree()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(GameManager.instance.keybinds.dictionary["MoveRight"]))
         {
             anim.SetInteger("Move", 1);
             anim.SetFloat("WalkBT", 0);
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
             IsRight = true;
         }
 
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(GameManager.instance.keybinds.dictionary["MoveLeft"]))
         {
             anim.SetInteger("Move", 1);
             anim.SetFloat("WalkBT", 2);

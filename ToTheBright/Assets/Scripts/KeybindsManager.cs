@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class KeybindsManager : MonoBehaviour
 {
-    Dictionary<string, KeyCode> dictionary = new Dictionary<string, KeyCode>();
+    public Dictionary<string, KeyCode> dictionary = new Dictionary<string, KeyCode>();
 
-    public Text left, right, jump;
+    public Text left, right, jump, dialogue;
 
     GameObject CurrentKey;
 
@@ -17,10 +17,12 @@ public class KeybindsManager : MonoBehaviour
         dictionary.Add("MoveLeft", KeyCode.A);
         dictionary.Add("MoveRight", KeyCode.D);
         dictionary.Add("Jump", KeyCode.Space);
+        dictionary.Add("Dialogue", KeyCode.E);
 
         left.text = dictionary["MoveLeft"].ToString();
         right.text = dictionary["MoveRight"].ToString();
         jump.text = dictionary["Jump"].ToString();
+        dialogue.text = dictionary["Dialogue"].ToString();
 
     }
 
@@ -40,6 +42,11 @@ public class KeybindsManager : MonoBehaviour
         if (Input.GetKeyDown(dictionary["Jump"]))
         {
             Debug.Log("Jump has been pressed!");
+        }
+
+        if (Input.GetKeyDown(dictionary["Dialogue"]))
+        {
+            Debug.Log("Dialogue has been pressed!");
         }
     }
 
