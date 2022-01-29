@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jumpdetect : MonoBehaviour
 {
-    public bool jumpdet = true;
+    
 
     
 
@@ -19,7 +19,7 @@ public class Jumpdetect : MonoBehaviour
     {
         
     }
-
+    public bool jumpdet = true;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground")
