@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public float speed;
     public float jump;
     public float horizontal;
-
+    
     
 
 

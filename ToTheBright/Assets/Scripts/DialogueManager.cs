@@ -7,23 +7,20 @@ public class DialogueManager : MonoBehaviour
 {
     public Animator animator;
 
-    private Queue<string> text;
-    //public Text nameText;
+    public Queue<string> text;
+    public Text nameText;
     public Text dialogueText;
     // Start is called before the first frame update
     void Start()
     {
         text = new Queue<string>();
-        //animator.SetInteger("BoxState", 1);
-
     }
 
     public void StartDialogue(Dialog dialogue)
     {
-        animator.SetInteger("BoxState", 3);
-        animator.SetInteger("BoxState", 2);
+        animator.SetBool("IsOpen", true);
 
-        //nameText.text = dialogue.name;
+        nameText.text = dialogue.name;
 
         text.Clear();
 
@@ -41,7 +38,7 @@ public class DialogueManager : MonoBehaviour
         {
             FindObjectOfType<NPCInteraction>().isDialogueTrigger = false;
 
-            animator.SetInteger("BoxState", 1);
+            animator.SetBool("IsOpen", false);
 
             return;
         }
@@ -67,5 +64,9 @@ public class DialogueManager : MonoBehaviour
         //FindObjectOfType<NPCInteraction>().audioSource.Stop();
     }
 
-    
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

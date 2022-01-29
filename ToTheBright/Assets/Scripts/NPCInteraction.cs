@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NPCInteraction : Interactables
+public class NPCInteraction : MonoBehaviour
 {
     public Sprite dialogueBoxSprite;
     public GameObject dialogueBox;
@@ -13,6 +13,7 @@ public class NPCInteraction : Interactables
 
     public Dialog dialogue;
     public bool isDialogueTrigger = false;
+    public bool isInDistance = false;
 
 
 
@@ -22,10 +23,13 @@ public class NPCInteraction : Interactables
     }
 
     
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        isInDistance = true;
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isPlayerInRange = false;
+        isInDistance = false;
         
         FindObjectOfType<DialogueManager>().animator.SetBool("IsOpen", false);
         //audioSource.Stop();
@@ -34,9 +38,9 @@ public class NPCInteraction : Interactables
 
     private void Update()
     {
-        if (isPlayerInRange)
+        if (isInDistance)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.T))
             {
                
                 if (isDialogueTrigger)
