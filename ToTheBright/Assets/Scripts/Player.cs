@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float horizontal;
 
     public bool jumpdet = true;
+    public bool IsRight = true;
 
 
     public float jumpAmount = 35;
@@ -33,23 +34,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        BlendTree();
+
         horizontal = Input.GetAxisRaw("Horizontal");
         jump = Input.GetAxisRaw("Jump");
 
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    anim.SetInteger("AnimState", 1);
-        //}
-
-        //else if (Input.GetKey(KeyCode.A))
-        //{
-        //    anim.SetInteger("AnimState", 2);
-        //}
-
-        //else
-        //{
-        //    anim.SetInteger("AnimState", 0);
-        //}
+        
 
         if (Input.GetKeyDown(KeyCode.Space) && jumpdet==true)
         {
@@ -108,6 +98,8 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        anim.SetBool("Grounded", jumpdet);
+        anim.SetFloat("vSpeed", rb.velocity.y);
     }
 
     public void Move()
@@ -123,7 +115,35 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void BlendTree()
+    {
+        if (Input.GetKey(KeyCode.D))
+        {
+            anim.SetInteger("Move", 1);
+            anim.SetFloat("WalkBT", 0);
+            IsRight = true;
+        }
 
+        else if (Input.GetKey(KeyCode.A))
+        {
+            anim.SetInteger("Move", 1);
+            anim.SetFloat("WalkBT", 2);
+            IsRight = false;
+        }
+
+        else
+        {
+            anim.SetInteger("Move", 0);
+            if (IsRight==true)
+            {
+                anim.SetFloat("IdleBT", 0);
+            }
+            else
+            {
+                anim.SetFloat("IdleBT", 2);
+            }
+        }
+    }
 
 
 }
