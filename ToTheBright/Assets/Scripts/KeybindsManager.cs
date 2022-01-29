@@ -12,17 +12,17 @@ public class KeybindsManager : MonoBehaviour
     GameObject CurrentKey;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         dictionary.Add("MoveLeft", KeyCode.A);
         dictionary.Add("MoveRight", KeyCode.D);
         dictionary.Add("Jump", KeyCode.Space);
         dictionary.Add("Dialogue", KeyCode.E);
 
-        left.text = dictionary["MoveLeft"].ToString();
-        right.text = dictionary["MoveRight"].ToString();
-        jump.text = dictionary["Jump"].ToString();
-        dialogue.text = dictionary["Dialogue"].ToString();
+        //left.text = dictionary["MoveLeft"].ToString();
+        //right.text = dictionary["MoveRight"].ToString();
+        //jump.text = dictionary["Jump"].ToString();
+        //dialogue.text = dictionary["Dialogue"].ToString();
 
     }
 

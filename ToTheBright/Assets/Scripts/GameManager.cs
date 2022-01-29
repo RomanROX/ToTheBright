@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     //public GameObject PauseUI;
     //public bool isPaused = false;
     public static GameManager instance;
-    //public KeybindsManager keybinds;
+    public KeybindsManager keybinds;
     public DialogueManager dialogueManager;
     public int clock;
     public int book;
@@ -19,7 +19,13 @@ public class GameManager : MonoBehaviour
     //public int coins = 0;
     public List<string> Inventory = new List<string>();
 
+<<<<<<< Updated upstream
     public string LastLevelPlayed;
+=======
+    public Dictionary<string, KeyCode> dictionary = new Dictionary<string, KeyCode>();
+
+    //public string LastLevel
+>>>>>>> Stashed changes
 
 
     private void Start()
@@ -40,10 +46,15 @@ public class GameManager : MonoBehaviour
         }
     }
     // Start is called before the first frame update
-    //void Start()
-    //{
-    //    keybinds = GetComponentInChildren<KeybindsManager>();
-    //}
+    void Start()
+    {
+        keybinds = GetComponentInChildren<KeybindsManager>();
+        dictionary.Add("MoveLeft", KeyCode.A);
+        dictionary.Add("MoveRight", KeyCode.D);
+        dictionary.Add("Jump", KeyCode.Space);
+        dictionary.Add("Dialogue", KeyCode.E);
+
+    }
 
     // Update is called once per frame
    
