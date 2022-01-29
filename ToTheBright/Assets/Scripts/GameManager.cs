@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     //public KeybindsManager keybinds;
     public DialogueManager dialogueManager;
+    public int clock;
+    public int book;
+    public int hart;
 
     private GameObject go;
 
