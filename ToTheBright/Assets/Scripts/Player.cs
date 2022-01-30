@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -105,9 +104,5 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void UpdateCounter()
-    {
-        // gameUI.transform.Find("Num").GetComponent<Text>().text = "x0" + itemCounter;
-        GameManager.instance.gameUI.GetComponentInChildren<Image>().transform.Find("Num").GetComponent<Text>().text = "x0" + GameManager.instance.itemCounter;
-    }
+
 }

@@ -5,51 +5,46 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    //public GameObject GameUI;
+    public GameObject gameUI;
     //public GameObject PauseUI;
     //public bool isPaused = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //public KeybindsManager keybinds;
+
+    
 
     public static GameManager instance;
-=======
-    public static GameManager instance;
     public KeybindsManager keybinds;
->>>>>>> abc5b3e763af3336dadd2955efe2de0cd614c38f
-=======
-    public static GameManager instance;
-    public KeybindsManager keybinds;
->>>>>>> abc5b3e763af3336dadd2955efe2de0cd614c38f
+
     public DialogueManager dialogueManager;
-    public GameObject gameUI;
-
-    public GameObject a;
-
-    public int itemCounter;
-    public int totalCounter;
 
     private GameObject go;
 
+    public int itemCounter;
+    public int totalCounter;
+    
+
     public List<string> Inventory = new List<string>();
 
-<<<<<<< Updated upstream
     public string LastLevelPlayed;
-=======
+
     public Dictionary<string, KeyCode> dictionary = new Dictionary<string, KeyCode>();
 
     //public string LastLevel
->>>>>>> Stashed changes
+
 
 
     private void Start()
     {
         LastLevelPlayed = "Level01";
         totalCounter = 5;
-        //gameUI = GetComponentInChildren<Canvas>();
+        gameUI = GetComponentInChildren<Canvas>().gameObject;
         UpdateCounter();
-        //UpdateTotal();
+        UpdateTotal();
         gameUI.SetActive(false);
+        keybinds = GetComponentInChildren<KeybindsManager>();
+        dictionary.Add("MoveLeft", KeyCode.A);
+        dictionary.Add("MoveRight", KeyCode.D);
+        dictionary.Add("Jump", KeyCode.Space);
+        dictionary.Add("Dialogue", KeyCode.E);
     }
     private void Awake()
     {
@@ -64,6 +59,7 @@ public class GameManager : MonoBehaviour
             DestroyImmediate(gameObject);
         }
     }
+
 
     public void UpdateTotal()
     {
@@ -80,16 +76,12 @@ public class GameManager : MonoBehaviour
    
 
     // Start is called before the first frame update
-    void Start()
-    {
-        keybinds = GetComponentInChildren<KeybindsManager>();
-        dictionary.Add("MoveLeft", KeyCode.A);
-        dictionary.Add("MoveRight", KeyCode.D);
-        dictionary.Add("Jump", KeyCode.Space);
-        dictionary.Add("Dialogue", KeyCode.E);
+    //void Start()
+    //{
+    //    keybinds = GetComponentInChildren<KeybindsManager>();
+    //}
 
-    }
 
     // Update is called once per frame
-
+   
 }
