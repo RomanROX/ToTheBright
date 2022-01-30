@@ -36,11 +36,7 @@ public class ItemCollector : MonoBehaviour
         CheckAndUpdate();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void CheckAndUpdate()
     {

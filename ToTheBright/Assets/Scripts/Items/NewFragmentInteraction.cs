@@ -32,8 +32,8 @@ public class NewFragmentInteraction : Interactables
                 lock_.SetActive(true);
 
                 }
-
-
+            GameManager.instance.itemCounter++;
+            GameManager.instance.UpdateCounter();
             Destroy(gameObject);
             
         }

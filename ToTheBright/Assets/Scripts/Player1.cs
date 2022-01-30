@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player1 : MonoBehaviour
 {
     public float speed;
     public float jump;
     public float horizontal;
+
+    public Transform feetPos;
+    public float checkRadious;
+    public LayerMask ground;
 
     public bool jumpdet = true;
     public bool IsRight = true;
@@ -26,10 +30,12 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        feetPos = gameObject.GetComponent<Transform>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         BlendTree();
 
@@ -42,8 +48,9 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);            
             jumpdet = false;
-        }         
-            
+        }
+
+        jumpdet = Physics2D.Raycast(feetPos.position,Vector2.down,checkRadious,ground);
     }
     
     private void FixedUpdate()
@@ -58,14 +65,14 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
     //Jump Detect
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            jumpdet = true;
+   // private void OnTriggerEnter2D(Collider2D collision)
+   // {
+   //     if (collision.gameObject.tag == "Ground")
+   //     {
+   //         jumpdet = true;
 
-        }
-    }
+   //     }
+   // }
 
     //BlendTree
     public void BlendTree()
@@ -81,6 +88,7 @@ public class Player : MonoBehaviour
             anim.SetFloat("JumpBT", 0);
             IsRight = true;
         }
+
         else if (Input.GetKey(/*GameManager.instance.dictionary["MoveLeft"] */KeyCode.A))
         {
             anim.SetInteger("Move", 1);
@@ -88,6 +96,7 @@ public class Player : MonoBehaviour
             anim.SetFloat("JumpBT", 2);
             IsRight = false;
         }
+
         else
         {
             anim.SetInteger("Move", 0);
