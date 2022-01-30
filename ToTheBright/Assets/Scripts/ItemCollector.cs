@@ -1,40 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+public enum ItemType
+{
+    hart,
+    clock,
+    notes,
+    page,
+    book,
+    gamepad,
+    none
+}
+
 
 public class ItemCollector : MonoBehaviour
 {
-    public bool clock;
-    public bool hart;
-    public bool book;
-    private void OnTriggerEnter2D(Collider2D other)
+    //public bool clock;
+    //public bool hart;
+    //public bool book;
+    //public bool gamepad;
+    //public bool notes;
+
+    public ItemType currentItemsOnScene;
+    public List<Sprite> itemLogos;
+
+    public Image Item;
+
+    public int itemNum;
+
+    private void Start()
     {
-        if (other.gameObject.tag == "Player")
-        {
-            if (clock)
-            {
-                GameManager.instance.clock++;
-            }
-            else if (book)
-            {
-                GameManager.instance.book++;
-            }
-            else if (hart)
-            {
-                GameManager.instance.hart++;
-            }
-            Destroy(gameObject);
-        }
+        //CheckAndUpdate();
+        itemNum = 0;
+        CheckAndUpdate();
     }
-    // Start is called before the first frame update
-    void Start()
+    public void CheckAndUpdate()
     {
-        
+        //switch (GameManager.instance.LastLevelPlayed)
+        //{
+        //    case "Level01":
+        //        currentItemsOnScene = ItemType.hart;
+        //        break;
+        //    case "Level02":
+        //        currentItemsOnScene = ItemType.clock;
+        //        break;
+        //    case "Level03":
+        //        currentItemsOnScene = ItemType.notes;
+        //        break;
+        //    case "Level04":
+        //        currentItemsOnScene = ItemType.notes;
+        //        break;
+        //    default:
+        //        currentItemsOnScene = ItemType.none;
+        //        break;
+        //}
+        Item.sprite = itemLogos[itemNum];
+
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
