@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -71,10 +70,6 @@ public class Player : MonoBehaviour
     //BlendTree
     public void BlendTree()
     {
-        //Debug.Log(GameManager.instance +"111");
-        //Debug.Log(GameManager.instance.keybinds + "112");
-        //Debug.Log(GameManager.instance.keybinds.dictionary + "1113");
-        //Debug.Log(GameManager.instance.keybinds.dictionary["MoveLeft"] + "1113");
         if (Input.GetKey(/*GameManager.instance.keybinds.dictionary["MoveRight"]*/ KeyCode.D))
         {
             anim.SetInteger("Move", 1);
@@ -83,7 +78,7 @@ public class Player : MonoBehaviour
             IsRight = true;
         }
 
-        else if (Input.GetKey(GameManager.instance.dictionary["MoveLeft"] /*KeyCode.A)*/))
+        else if (Input.GetKey(/*GameManager.instance.keybinds.dictionary["MoveLeft"]*/ KeyCode.A))
         {
             anim.SetInteger("Move", 1);
             anim.SetFloat("WalkBT", 2);
@@ -105,9 +100,5 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void UpdateCounter()
-    {
-        // gameUI.transform.Find("Num").GetComponent<Text>().text = "x0" + itemCounter;
-        GameManager.instance.gameUI.GetComponentInChildren<Image>().transform.Find("Num").GetComponent<Text>().text = "x0" + GameManager.instance.itemCounter;
-    }
+
 }

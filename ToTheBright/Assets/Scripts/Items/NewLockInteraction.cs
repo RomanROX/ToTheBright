@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-
 
 public class NewLockInteraction : Interactables
 {
@@ -15,13 +13,10 @@ public class NewLockInteraction : Interactables
     private void Start()
     {
         gameObject.SetActive(false);
-        if (!(SceneManager.GetActiveScene().ToString()=="MainMenu"))
+        if (!(SceneManager.GetActiveScene().ToString() == "MainMenu"))
         {
             GameManager.instance.UpdateTotal();
-
         }
-        
-        //GameManager.instance.gameUI.transform.Find("Item").GetComponent<Image>().sprite = GameManager.instance.GetComponent<ItemCollector>().itemLogos[(((int)GameManager.instance.GetComponent<ItemCollector>().currentItemsOnScene))];
     }
     private void Update()
     {
@@ -43,7 +38,6 @@ public class NewLockInteraction : Interactables
             GameManager.instance.GetComponent<ItemCollector>().CheckAndUpdate();
 
             GameManager.instance.UpdateCounter();
-            
         }
     }
 }

@@ -5,38 +5,40 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    //public GameObject GameUI;
+    public GameObject gameUI;
     //public GameObject PauseUI;
     //public bool isPaused = false;
-    //public KeybindsManager keybinds;
+
+    
 
     public static GameManager instance;
     public KeybindsManager keybinds;
-    public DialogueManager dialogueManager;
-    public GameObject gameUI;
 
-    public GameObject a;
+    public DialogueManager dialogueManager;
+
+    private GameObject go;
 
     public int itemCounter;
     public int totalCounter;
-
-    private GameObject go;
+    
 
     public List<string> Inventory = new List<string>();
 
     public string LastLevelPlayed;
+
     public Dictionary<string, KeyCode> dictionary = new Dictionary<string, KeyCode>();
 
     //public string LastLevel
+
 
 
     private void Start()
     {
         LastLevelPlayed = "Level01";
         totalCounter = 5;
-        //gameUI = GetComponentInChildren<Canvas>();
+        gameUI = GetComponentInChildren<Canvas>().gameObject;
         UpdateCounter();
-        //UpdateTotal();
+        UpdateTotal();
         gameUI.SetActive(false);
         keybinds = GetComponentInChildren<KeybindsManager>();
         dictionary.Add("MoveLeft", KeyCode.A);
@@ -58,6 +60,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     public void UpdateTotal()
     {
         totalCounter = FindObjectOfType<NewFragmentInteraction>().neededFragments.Count;
@@ -72,6 +75,13 @@ public class GameManager : MonoBehaviour
     }
    
 
-    // Update is called once per frame
+    // Start is called before the first frame update
+    //void Start()
+    //{
+    //    keybinds = GetComponentInChildren<KeybindsManager>();
+    //}
 
+
+    // Update is called once per frame
+   
 }
