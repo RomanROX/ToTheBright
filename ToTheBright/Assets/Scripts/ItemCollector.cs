@@ -2,37 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public enum itemImage
+{
+    Heart,
+    Clock,
+    MusicNote,
+    Page,
+    Gamepad,
+    none
+}
 
 public class ItemCollector : MonoBehaviour
 {
     public List<Sprite> itemLogos;
     public Image Item;
-    public int itemNum;
+    //public int itemNum;
 
+    public itemImage itemImage;
     
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        if (clock)
-    //        {
-    //            GameManager.instance.clock++;
-    //        }
-    //        else if (book)
-    //        {
-    //            GameManager.instance.book++;
-    //        }
-    //        else if (hart)
-    //        {
-    //            GameManager.instance.hart++;
-    //        }
-    //        Destroy(gameObject);
-    //    }
-    //}
-    // Start is called before the first frame update
+    
     void Start()
     {
-        itemNum = 0;
         CheckAndUpdate();
     }
 
@@ -40,6 +32,27 @@ public class ItemCollector : MonoBehaviour
 
     public void CheckAndUpdate()
     {
-        Item.sprite = itemLogos[itemNum];
+        switch (GameManager.instance.LastLevelPlayed)
+        {
+            case "Level01":
+                itemImage = itemImage.Heart;
+                break;
+            case "Level02":
+                itemImage = itemImage.Clock;
+                break;
+            case "Level03":
+                itemImage = itemImage.MusicNote;
+                break;
+            case "Level04":
+                itemImage = itemImage.Page;
+                break;
+            case "Level05":
+                itemImage = itemImage.Gamepad;
+                break;
+            default:
+                itemImage = itemImage.none;
+                break;
+        }
+        Item.sprite = itemLogos[((int)itemImage)];
     }
 }

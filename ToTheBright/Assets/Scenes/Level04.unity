@@ -350,6 +350,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &563857836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7402605077904122064, guid: f76db07d124d0814287e849a64fb0324, type: 3}
+  m_PrefabInstance: {fileID: 1761221140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &602778316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -644,7 +649,7 @@ MonoBehaviour:
   - Page4
   - Page5
   - Page6
-  lock_: {fileID: 0}
+  lock_: {fileID: 563857836}
 --- !u!61 &740901639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -655,7 +660,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -812,7 +817,7 @@ MonoBehaviour:
   - Page4
   - Page5
   - Page6
-  lock_: {fileID: 0}
+  lock_: {fileID: 563857836}
 --- !u!61 &964037695
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -823,7 +828,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1132,7 +1137,7 @@ MonoBehaviour:
   - Page4
   - Page5
   - Page6
-  lock_: {fileID: 0}
+  lock_: {fileID: 563857836}
 --- !u!61 &1107527319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1143,7 +1148,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1264,7 +1269,7 @@ MonoBehaviour:
   - Page4
   - Page5
   - Page6
-  lock_: {fileID: 0}
+  lock_: {fileID: 563857836}
 --- !u!61 &1153180078
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1275,7 +1280,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2012,7 +2017,7 @@ MonoBehaviour:
   - Page4
   - Page5
   - Page6
-  lock_: {fileID: 0}
+  lock_: {fileID: 563857836}
 --- !u!61 &1244566671
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2023,7 +2028,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2284,7 +2289,7 @@ MonoBehaviour:
   - Page4
   - Page5
   - Page6
-  lock_: {fileID: 0}
+  lock_: {fileID: 563857836}
 --- !u!61 &1402607138
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2295,7 +2300,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

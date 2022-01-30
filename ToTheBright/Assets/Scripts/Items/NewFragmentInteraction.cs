@@ -30,7 +30,7 @@ public class NewFragmentInteraction : Interactables
                     }
                 GameManager.instance.Inventory.Add(lock_.GetComponent<NewLockInteraction>().keyName);
                 lock_.SetActive(true);
-
+                FindObjectOfType<NPCInteraction>().gameObject.SetActive(false);
                 }
             GameManager.instance.itemCounter++;
             GameManager.instance.UpdateCounter();

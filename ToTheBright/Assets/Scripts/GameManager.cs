@@ -38,8 +38,8 @@ public class GameManager : MonoBehaviour
         LastLevelPlayed = "Level01";
         totalCounter = 5;
         gameUI = GetComponentInChildren<Canvas>().gameObject;
-        UpdateCounter();
-        UpdateTotal();
+        //UpdateCounter();
+        //UpdateTotal();
         //gameUI.SetActive(false);
 
         //keybinds = GetComponentInChildren<KeybindsManager>();
@@ -61,7 +61,13 @@ public class GameManager : MonoBehaviour
             DestroyImmediate(gameObject);
         }
     }
-
+    private void Update()
+    {
+        if (!(LastLevelPlayed == "MainMenu" || LastLevelPlayed== "MainMenuSunVersion" || LastLevelPlayed== "IntroCutscene" || LastLevelPlayed == "OutroScene05"))
+        {
+            gameUI.SetActive(true);
+        } else { gameUI.SetActive(true); }
+    }
 
     public void UpdateTotal()
     {

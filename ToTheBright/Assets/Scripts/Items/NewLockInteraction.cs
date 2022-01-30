@@ -12,8 +12,10 @@ public class NewLockInteraction : Interactables
 
     private void Start()
     {
+        GameManager.instance.LastLevelPlayed = SceneManager.GetActiveScene().name;
+        GameManager.instance.gameObject.GetComponent<ItemCollector>().CheckAndUpdate();
         gameObject.SetActive(false);
-        if (!(SceneManager.GetActiveScene().ToString() == "MainMenu"))
+        if (!(SceneManager.GetActiveScene().ToString() == "MainMenu" || SceneManager.GetActiveScene().ToString() == "MainMenuSunVersion" || SceneManager.GetActiveScene().ToString() == "IntroCutscene" || SceneManager.GetActiveScene().ToString() == "OutroScene05"))
         {
             GameManager.instance.UpdateTotal();
         }
@@ -32,10 +34,9 @@ public class NewLockInteraction : Interactables
         if (collision.CompareTag("Player"))
         {
             SceneManager.LoadScene(nextScene);
-            GameManager.instance.LastLevelPlayed = SceneManager.GetActiveScene().ToString();
-            GameManager.instance.GetComponent<ItemCollector>().itemNum++;
+            
             GameManager.instance.itemCounter = 0;
-            GameManager.instance.GetComponent<ItemCollector>().CheckAndUpdate();
+            //GameManager.instance.GetComponent<ItemCollector>().CheckAndUpdate();
 
             GameManager.instance.UpdateCounter();
         }
