@@ -8,19 +8,10 @@ public class GameManager : MonoBehaviour
     //public GameObject GameUI;
     //public GameObject PauseUI;
     //public bool isPaused = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
     //public KeybindsManager keybinds;
 
     public static GameManager instance;
-=======
-    public static GameManager instance;
     public KeybindsManager keybinds;
->>>>>>> abc5b3e763af3336dadd2955efe2de0cd614c38f
-=======
-    public static GameManager instance;
-    public KeybindsManager keybinds;
->>>>>>> abc5b3e763af3336dadd2955efe2de0cd614c38f
     public DialogueManager dialogueManager;
     public GameObject gameUI;
 
@@ -33,13 +24,10 @@ public class GameManager : MonoBehaviour
 
     public List<string> Inventory = new List<string>();
 
-<<<<<<< Updated upstream
     public string LastLevelPlayed;
-=======
     public Dictionary<string, KeyCode> dictionary = new Dictionary<string, KeyCode>();
 
     //public string LastLevel
->>>>>>> Stashed changes
 
 
     private void Start()
@@ -50,6 +38,11 @@ public class GameManager : MonoBehaviour
         UpdateCounter();
         //UpdateTotal();
         gameUI.SetActive(false);
+        keybinds = GetComponentInChildren<KeybindsManager>();
+        dictionary.Add("MoveLeft", KeyCode.A);
+        dictionary.Add("MoveRight", KeyCode.D);
+        dictionary.Add("Jump", KeyCode.Space);
+        dictionary.Add("Dialogue", KeyCode.E);
     }
     private void Awake()
     {
@@ -78,17 +71,6 @@ public class GameManager : MonoBehaviour
         gameUI.GetComponentInChildren<Image>().transform.Find("Num1").GetComponent<Text>().text="x"+itemCounter;
     }
    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        keybinds = GetComponentInChildren<KeybindsManager>();
-        dictionary.Add("MoveLeft", KeyCode.A);
-        dictionary.Add("MoveRight", KeyCode.D);
-        dictionary.Add("Jump", KeyCode.Space);
-        dictionary.Add("Dialogue", KeyCode.E);
-
-    }
 
     // Update is called once per frame
 
