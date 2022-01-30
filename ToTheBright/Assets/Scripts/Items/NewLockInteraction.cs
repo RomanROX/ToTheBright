@@ -13,6 +13,10 @@ public class NewLockInteraction : Interactables
     private void Start()
     {
         gameObject.SetActive(false);
+        if (!(SceneManager.GetActiveScene().ToString() == "MainMenu"))
+        {
+            GameManager.instance.UpdateTotal();
+        }
     }
     private void Update()
     {
@@ -29,6 +33,11 @@ public class NewLockInteraction : Interactables
         {
             SceneManager.LoadScene(nextScene);
             GameManager.instance.LastLevelPlayed = SceneManager.GetActiveScene().ToString();
+            GameManager.instance.GetComponent<ItemCollector>().itemNum++;
+            GameManager.instance.itemCounter = 0;
+            GameManager.instance.GetComponent<ItemCollector>().CheckAndUpdate();
+
+            GameManager.instance.UpdateCounter();
         }
     }
 }
