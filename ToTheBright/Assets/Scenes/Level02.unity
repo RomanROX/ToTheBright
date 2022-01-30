@@ -276,7 +276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1658682289715942312, guid: 15d003ab76689984ab14cfd31c3f1afe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.57
+      value: -4.98
       objectReference: {fileID: 0}
     - target: {fileID: 1658682289715942312, guid: 15d003ab76689984ab14cfd31c3f1afe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -336,7 +336,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.48840845}
@@ -352,18 +352,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.15, y: 0.623183}
   m_EdgeRadius: 0
---- !u!114 &474123076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474123074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd6ace73f9991049a2eaa78312511bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &484574895
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,11 +531,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1658682289715942312, guid: 15d003ab76689984ab14cfd31c3f1afe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.94
+      value: -16.96
       objectReference: {fileID: 0}
     - target: {fileID: 1658682289715942312, guid: 15d003ab76689984ab14cfd31c3f1afe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.92
+      value: -4.98
       objectReference: {fileID: 0}
     - target: {fileID: 1658682289715942312, guid: 15d003ab76689984ab14cfd31c3f1afe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -607,7 +595,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.49585855}
@@ -623,18 +611,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.15, y: 0.6082828}
   m_EdgeRadius: 0
---- !u!114 &527506115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527506113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd6ace73f9991049a2eaa78312511bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &573497714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,7 +1629,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 0}
   Inventory: []
-  LastLevelPlayed: 
 --- !u!4 &798082294
 Transform:
   m_ObjectHideFlags: 0

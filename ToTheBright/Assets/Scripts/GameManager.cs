@@ -16,13 +16,8 @@ public class GameManager : MonoBehaviour
     //public int coins = 0;
     public List<string> Inventory = new List<string>();
 
-    public string LastLevelPlayed;
+    //public string LastLevel
 
-
-    private void Start()
-    {
-        LastLevelPlayed = "Level01";
-    }
     private void Awake()
     {
         if (instance is null)
@@ -43,5 +38,8 @@ public class GameManager : MonoBehaviour
     //}
 
     // Update is called once per frame
-   
+    void Update()
+    {
+        
+    }
 }
